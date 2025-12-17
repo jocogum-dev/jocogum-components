@@ -1,0 +1,48 @@
+button {
+    /* Configuration */
+    --button-padding: 0.7em 1.2em;
+    --button-gap: var(--space-sm);
+    --button-bg: var(--secondary-accent-color);
+    --button-color: var(--color-white);
+    --button-hover-bg: var(--secondary-accent-color);
+    --button-hover-color: var(--color-white); 
+    --button-border-width: var(--border-width);
+    --button-border-style: var(--border-style);
+    --button-border-color: var(--button-bg);
+    --button-radius: var(--space-sm);
+    /* Layout and spacing */
+    display: inline-flex;
+    align-items: center;
+    gap: var(--button-gap);
+    padding: var(--button-padding);
+
+    /* Colours */
+    background: var(--button-bg);
+    color: var(--button-color);
+
+    /* Stroke and radius */
+    border: var(--border);
+    box-shadow: var(--shadow-sm);
+
+    /* Typography */
+    text-decoration: none;
+    font-weight: var(--button-font-weight, 700);
+    font-size: var(--button-font-size, 1em);
+    letter-spacing: 0.05ch;
+    font-family: sans-serif;
+    line-height: 1.1;
+
+    /* Interactive */
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--button-hover-bg);
+    color: var(--button-hover-color);
+    box-shadow: var(--shadow-md);
+    transform: translate(-4px, -4px);
+}
+button:active {
+    transform: translate(0px, 0px);
+    box-shadow: none;
+}

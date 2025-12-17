@@ -1,0 +1,18 @@
+.accordion summary {
+    display: block;
+}
+.accordion summary::webket-details-marker {
+    display: none;
+}
+.accordion span {
+    display: flex;
+    justify-content: space-between;
+}
+.accordion span:after {
+    content: "\276F";
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+.accordion details[open] span:after {
+    transform: rotate(270deg);
+}

@@ -1,0 +1,21 @@
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: var(--color-black);
+        --background-color: var(--color-gray);
+    }
+}
+    
+@media (prefers-color-scheme: light) {
+    :root {
+        --text-color: var(--color-yellow);
+        --background-color: var(--color-white);
+    }
+}
+/* If the <select> element's value attribute matches, switch schemes */    
+:root:has(option[value="light"]:checked) {
+    color-scheme: light;
+}
+:root:has(option[value="dark"]:checked) {
+    color-scheme: dark;
+}

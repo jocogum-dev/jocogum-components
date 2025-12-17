@@ -1,0 +1,45 @@
+/* 
+- Hard borders
+- Hard shadows
+- Loud colors
+- Minimal effects
+- Clear interaction states 
+*/
+:root {
+    /* Core colors */
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-gray: #707070;
+
+    /* Accent colors (pick 1–2 per project) */
+    --color-yellow: #ffd93d;
+    --color-red: #ff6b6b;
+    --color-blue: #4d96ff;
+    --color-green: #6bffb8;
+
+    /* Site colors */
+    --text-color: var(--color-black);
+    --background-color: var(--color-white);
+    --primary-accent-color: var(--color-green);
+    --secondary-accent-color: var(--color-blue);
+
+    /* Borders */
+    --border-width: 3px;
+    --border-style: solid;
+    --border-color: var(--color-black);
+    --border: var(--border-width) var(--border-style) var(--border-color);
+    
+    /* Spacing */
+    --space-sm: 0.5em;
+    --space-md: 1em;
+    --space-lg: 1.5em;
+    
+    /* Shadows (hard, offset) */
+    --shadow-sm: 3px 3px 0 var(--color-black);
+    --shadow-md: 6px 6px 0 var(--color-black);
+    --shadow-lg: 8px 8px 0 var(--color-black);
+
+    /* Typography */
+    --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-heading: inherit;
+}

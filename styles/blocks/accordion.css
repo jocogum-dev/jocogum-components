@@ -1,5 +1,36 @@
+.accordion {
+    /* Configuration */
+    --accordion-bg: var(--secondary-accent-color);
+    --accordion-color: var(--background-color);
+    --accordion-font-weight: var(--font-size-base);
+    --accordion-font-size: var(--font-weight-bold);
+    --accordion-spacing: var(--space-md);
+    --accordion-border: var(--border-width) var(--border-style) var(--border-color);
+    --accordion-shadow: var(--shadow-md);
+}
 .accordion summary {
+    /* Layout and spacing */
     display: block;
+    padding: var(--accordion-spacing);
+
+    /* Colours */
+    background-color: var(--accordion-bg);
+    color: var(--accordion-color);
+
+    /* Stroke and radius */
+    border: var(--border);
+    box-shadow: var(--shadow-sm);
+
+    /* Typography */
+    font-weight: var(--button-font-weight);
+    font-size: var(--button-font-size);
+    letter-spacing: 0.05ch;
+    font-family: sans-serif;
+    line-height: 1.1;
+}
+.accordion details:not([open]) summary:hover {
+    box-shadow: var(--accordion-shadow);
+    transform: translate(-4px, -4px);
 }
 .accordion summary::webket-details-marker {
     display: none;
@@ -8,11 +39,47 @@
     display: flex;
     justify-content: space-between;
 }
-.accordion span:after {
-    content: "\276F";
+.accordion span::after {
+    content: "\276F ";
+    display: inline-block;
     transform: rotate(90deg);
     transition: transform 0.3s ease;
 }
 .accordion details[open] span:after {
     transform: rotate(270deg);
+}
+.accordion .content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+}
+.accordion .inner {
+    overflow: hidden;
+    margin: 0;
+}
+.accordion:has(details[open]) {
+    /* Stroke and radius */
+    border: var(--border);
+    box-shadow: var(--shadow-sm);
+}
+.accordion details[open] summary {
+    border: none;
+    box-shadow: none;
+    border-bottom: var(--accordion-border);
+}
+.accordion details[open] + .content {
+    /* Layout and spacing */
+    grid-template-rows: 1fr;
+    padding: var(--accordion-spacing);
+
+    /* Colours */
+    color: var(--accordion-bg);
+    background-color: var(--accordion-color);
+
+    /* Typography */
+    font-weight: var(--button-font-weight);
+    font-size: var(--button-font-size);
+    letter-spacing: 0.05ch;
+    font-family: sans-serif;
+    line-height: 1.1;
 }

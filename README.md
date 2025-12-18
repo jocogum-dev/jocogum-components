@@ -26,6 +26,13 @@ styles/
 ├── blocks/
 │   ├── button.css
 │   ├── dialog.css
-│   └── form.css
+│   └── accordion.css
 └── main.css
 ```
+
+---
+
+## Sources
+- https://piccalil.li/blog/
+- https://theosoti.com/blog/
+- https://www.nngroup.com/articles/neobrutalism/

@@ -36,3 +36,4 @@ styles/
 - https://piccalil.li/blog/
 - https://theosoti.com/blog/
 - https://www.nngroup.com/articles/neobrutalism/
+- https://www.neobrutalism.dev/

@@ -46,14 +46,18 @@
     background-color: var(--carousel-color);
     cursor: pointer;
     border: var(--carousel-border);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    line-height: 1;
 }
 .carousel::scroll-button(left) {
-    content: "<";
+    content: "◀";
     right: calc(anchor(left) + var(--carousel-spacing));
     top: calc(anchor(center));
 }
 .carousel::scroll-button(right) {
-    content: ">";
+    content: "▶";
     left: calc(anchor(right) + var(--carousel-spacing));
     top: calc(anchor(center));
 }

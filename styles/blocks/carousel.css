@@ -2,62 +2,103 @@
     /* Configuration */
     --carousel-bg: var(--secondary-accent-color);
     --carousel-color: var(--background-color);
-    --carousel-font-weight: var(--font-size-base);
-    --carousel-font-size: var(--font-weight-bold);
     --carousel-spacing: var(--space-md);
     --carousel-border: var(--border-width) var(--border-style) var(--border-color);
-    --carousel-shadow: var(--shadow-md);
-    --carousel-height: 150px;
-    --carousel-width: 300px;
-    --carousel-item-height: var(--carousel-height);
-    --carousel-item-width: 150px;
-    --carousel-item-spacing: var(--space-md);
-    --carousel-items: 3;
-    --carousel-duration: 10s;
-    --carousel-border: var(--border);
     --carousel-shadow: var(--shadow-sm);
-    --carousel-hover-shadow: var(--shadow-lg);
+    --carousel-height: 500px;
+    --carousel-width: 300px;
+    --carousel-marker-size: 10px;
+    --carousel-navigation-size: 40px;
+    --carousel-item-spacing: var(--space-md);
 
+
+    display: flex;
+    gap: calc(var(--carousel-spacing) + (var(--border-width, 3px) * 2));
+    padding: var(--carousel-spacing);
     width: var(--carousel-width);
-    height: calc(var(--carousel-height) + (var(--carousel-spacing) * 2));
-    overflow: hidden;
+    height: var(--carousel-height);
+    margin: auto;
+
+    /* scrolling + pagination */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scroll-marker-group: after;
+    anchor-name: --carousel;
+}
+.carousel::scroll-marker-group {
+    position: absolute;
+    position-anchor: --carousel;
+    top: calc(anchor(bottom));
+    display: flex;
+    justify-content: center;
+    gap: var(--carousel-item-spacing);
+    inset-inline: 0;
+}
+.carousel::scroll-button(*) {
+    position: absolute;
+    text-align: center;
+    position-anchor: --carousel;
+    inline-size: var(--carousel-navigation-size);
+    block-size: var(--carousel-navigation-size);
+    border-radius: 50%;
+    background-color: var(--carousel-color);
+    cursor: pointer;
+    border: var(--carousel-border);
+}
+.carousel::scroll-button(left) {
+    content: "<";
+    right: calc(anchor(left) + var(--carousel-spacing));
+    top: calc(anchor(center));
+}
+.carousel::scroll-button(right) {
+    content: ">";
+    left: calc(anchor(right) + var(--carousel-spacing));
+    top: calc(anchor(center));
+}
+.carousel::scroll-button(*):disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+.carousel::scroll-button(*):not(:disabled):hover {
+    background-color: var(--carousel-bg);
+    box-shadow: var(--carousel-shadow);
+}
+.carousel li {
+    /* Layout and spacing */
+    list-style: none;
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Colors */
+    background-color: var(--carousel-bg);
+    color: var(--carousel-color);
 
     /* Stroke and radius */
     border: var(--carousel-border);
     box-shadow: var(--carousel-shadow);
-}
-.carousel .list {
-    display: flex;
-    min-width: calc(var(--carousel-item-width) * var (var(--carousel-items)));
-    position: relative;
-    list-style: none;
-    margin: 0;
-    margin-block-start: var(--carousel-spacing);
-}
-.carousel .item {
-    /* Layout and spacing */
-    width: var(--carousel-item-width);
-    height: var(--carousel-height);
-    position: absolute;
-    left: 100%;
 
     /* Interactivity */
-    animation: slide var(--carousel-duration) linear infinite;
-    animation-delay: calc((var(--carousel-duration)/var(--carousel-items) * (var(--carousel-position) - 1))- var(--carousel-duration));
+    scroll-snap-align: center;
 }
-@keyframes slide {
-    from {
-        left: 100%;
-    }
-    to {
-        left: calc(var(--carousel-width) * -1);
-    }
+
+.carousel li::scroll-marker {
+    content: "";
+    inline-size: var(--carousel-marker-size);
+    block-size: var(--carousel-marker-size);
+    border-radius: 50%;
+    border: var(--carousel-border);
+    background-color: var(--carousel-color);
+    color: var(--carousel-bg);
 }
-.carousel:hover {
-    box-shadow: var(--carousel-hover-shadow);
-    transform: translate(-4px, -4px);
+.carousel li::scroll-marker:hover {
+    box-shadow: var(--carousel-shadow);
 }
-.carousel:hover .item,
-.carousel:focus .item {
-    animation-play-state: paused;
+.carousel li::scroll-marker:target-current {
+    background-color: currentColor;
 }

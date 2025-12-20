@@ -1,0 +1,20 @@
+.card {
+    /* Configuration */
+    --card-bg: var(--background-color);
+    --card-color: var(--text-color);
+    --card-shadow: var(--shadow-sm);
+    --card-border: var(--border);
+    --card-spacing: var(--space-md);
+
+    /* Layout and spacing */
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: var(--card-spacing);
+
+    /* Colors */
+    background-color: var(--card-bg);
+
+    /* Stroke and radius */
+    border: var(--card-border);
+    box-shadow: var(--card-shadow);
+}

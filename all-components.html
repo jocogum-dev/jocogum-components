@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neobrutalism CSS - Components</title>
     <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/global.css"> 
-    <link rel="stylesheet" href="/styles/composition.css">
+    <link rel="stylesheet" href="/styles/global.css"> <!-- tokens, :root -->
+    <!-- <link rel="stylesheet" href="/styles/dark-mode.css"> -->
+    <link rel="stylesheet" href="/styles/composition.css"> <!-- layouts -->
     <link rel="stylesheet" href="/styles/blocks/modal.css">
     <link rel="stylesheet" href="/styles/blocks/button.css">
     <link rel="stylesheet" href="/styles/blocks/accordion.css">
@@ -17,12 +18,27 @@
 </head>
 
 <body>
-    <div class="container-fluid" style="--container-fluid-bg: var(--color-blue); --container-fluid-color: var(--color-white)">
-        <div class="container">
-            <h1>Hello World</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, labore.</p>
-        </div>
-    </div>
+    <!-- theme switcher -->
+    <!-- <div class="container">
+        <label for="theme-select">Theme:</label>
+        <select id="theme-select" name="color-scheme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+        </select>
+    </div> -->
+    <!-- end theme switcher -->
+    <!-- Modal -->
+    <button id="open-dialog">Open Dialog</button>
+    
+    <dialog id="modal" aria-labelledby="modal-title">
+        <h2 id="modal-title">Dialog Title</h2>
+        <p>This is a native modal using the HTML 'dialog' element.</p>
+        
+        <form method="dialog">
+            <button>Close</button>
+        </form>
+    </dialog>
+    <!-- end modal -->
     <div class="container">
         <!-- accordion -->
         <div class="accordion">

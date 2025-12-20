@@ -1,10 +1,10 @@
 button {
     /* Configuration */
-    --button-padding: 0.7em 1.2em;
+    --button-padding: 0.7em 1em;
     --button-gap: var(--space-sm);
-    --button-bg: var(--secondary-accent-color);
+    --button-bg: var(--primary-accent-color);
     --button-color: var(--background-color);
-    --button-hover-bg: var(--secondary-accent-color);
+    --button-hover-bg: var(--primary-accent-color);
     --button-hover-color: var(--background-color); 
     --button-border-width: var(--border-width);
     --button-border-style: var(--border-style);

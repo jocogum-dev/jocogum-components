@@ -1,6 +1,6 @@
 .carousel {
     /* Configuration */
-    --carousel-bg: var(--secondary-accent-color);
+    --carousel-bg: var(--primary-accent-color);
     --carousel-color: var(--background-color);
     --carousel-spacing: var(--space-md);
     --carousel-border: var(--border-width) var(--border-style) var(--border-color);
@@ -11,13 +11,15 @@
     --carousel-navigation-size: 40px;
     --carousel-item-spacing: var(--space-md);
 
-
+    /* Layout and spacing */
     display: flex;
     gap: calc(var(--carousel-spacing) + (var(--border-width, 3px) * 2));
     padding: var(--carousel-spacing);
-    width: var(--carousel-width);
+    max-width: var(--carousel-width);
+    width: 100%;
     height: var(--carousel-height);
     margin: auto;
+    margin-block-end: calc(var(--carousel-marker-size) + (var(--border-width, 3px) * 2));
 
     /* scrolling + pagination */
     overflow-x: hidden;
@@ -53,13 +55,21 @@
 }
 .carousel::scroll-button(left) {
     content: "◀";
-    right: calc(anchor(left) + var(--carousel-spacing));
+    right: calc(anchor(left) - var(--carousel-spacing) + var(--border-width, 3px));
     top: calc(anchor(center));
 }
 .carousel::scroll-button(right) {
     content: "▶";
-    left: calc(anchor(right) + var(--carousel-spacing));
+    left: calc(anchor(right) - var(--carousel-spacing) + var(--border-width, 3px));
     top: calc(anchor(center));
+}
+@media (min-width: 768px) {
+    .carousel::scroll-button(left) {
+        right: calc(anchor(left) + var(--carousel-spacing));
+    }
+    .carousel::scroll-button(right) {
+        left: calc(anchor(right) + var(--carousel-spacing));
+    }
 }
 .carousel::scroll-button(*):disabled {
     opacity: 0.3;

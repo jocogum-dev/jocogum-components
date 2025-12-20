@@ -1,6 +1,6 @@
 .accordion {
     /* Configuration */
-    --accordion-bg: var(--secondary-accent-color);
+    --accordion-bg: var(--primary-accent-color);
     --accordion-color: var(--background-color);
     --accordion-font-weight: var(--font-size-base);
     --accordion-font-size: var(--font-weight-bold);

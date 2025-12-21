@@ -5,7 +5,7 @@
     --carousel-spacing: var(--space-md);
     --carousel-border: var(--border-width) var(--border-style) var(--border-color);
     --carousel-shadow: var(--shadow-sm);
-    --carousel-height: 500px;
+    --carousel-height: 300px;
     --carousel-width: 300px;
     --carousel-marker-size: 10px;
     --carousel-navigation-size: 40px;

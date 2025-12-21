@@ -32,7 +32,7 @@
     box-shadow: var(--accordion-shadow);
     transform: translate(-4px, -4px);
 }
-.accordion summary::webket-details-marker {
+.accordion summary::webkit-details-marker {
     display: none;
 }
 .accordion span {
@@ -53,9 +53,13 @@
     grid-template-rows: 0fr;
     transition: grid-template-rows 0.3s ease;
 }
-.accordion .inner {
+.accordion .inner,
+.accordion .content > *  {
     overflow: hidden;
     margin: 0;
+}
+.accordion .content > *:not(.inner) {
+    display: none;
 }
 .accordion:has(details[open]) {
     /* Stroke and radius */

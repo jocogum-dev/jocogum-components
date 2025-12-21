@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/global.css"> 
     <link rel="stylesheet" href="/styles/composition.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
     <link rel="stylesheet" href="/styles/blocks/modal.css">
     <link rel="stylesheet" href="/styles/blocks/button.css">
     <link rel="stylesheet" href="/styles/blocks/accordion.css">
@@ -17,14 +18,139 @@
 </head>
 
 <body>
-    <div class="container-fluid" style="--container-fluid-bg: var(--color-blue); --container-fluid-color: var(--color-white)">
-        <div class="container">
-            <h1>Hello World</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, labore.</p>
+    <div class="container-fluid py-lg" style="--container-fluid-bg: var(--color-blue); --container-fluid-color: var(--color-white)">
+        <div class="container py-lg flex flex-col justify-center items-start" style="--container-height: 500px">
+            <h1 class="mb-lg">Hi, JoCodes here.</h1>
+            <p>Frontend Developer currently interested in building clean CSS systems and component-driven design.</p>
+            <div class="container ml-none flex gap-lg">
+                <button class="mt-lg" style="--button-bg: var(--background-color); --button-color: var(--primary-accent-color)">Github</button>
+                <button class="mt-lg" style="--button-bg: var(--background-color); --button-color: var(--primary-accent-color)">LinkedIn</button>
+            </div>
+
         </div>
     </div>
-    <div class="container">
+    <div class="container my-lg">
+        <!-- card -->
+        <div class="card">
+            <h1>Skills:</h1>
+            <ul>
+                <li>Frontend: HTML, CSS (CUBE, BEM), JavaScript</li>
+                <li>Frameworks / CMS: Umbraco, Bootstrap</li>
+                <li>Backend (supporting): C#, ASP.NET Razor Pages, Minimal Web APIs</li>
+                <li>Tooling: Git, npm, Figma</li>
+            </ul>
+        </div>
+        <!-- end card -->
+    </div>
+    <div class="container my-lg">
+        <div class="card py-lg">
+        <h1>Work Experience:</h1>
         <!-- accordion -->
+        <div class="accordion">
+            <details>
+                <summary aria-describedby="accordion">
+                    <span role="term">Frontend Developer - Dec 2022 to Present</span>
+                </summary>
+            </details>
+            <div class="content">
+                <div class="inner" role="definition" id="accordion">
+                    <p>Implement, document, enhance, upgrade, test, and maintain public facing company websites.</p>
+                    <ul>
+                        <li>Umbraco CMS / .NET / C#</li>
+                        <li>CSS / Bootstrap</li>
+                        <li>Javascript / JQuery</li>
+                        <li>Lit Web Components</li>
+                        <li>Git / Azure Devops / Azure App Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion">
+            <details>
+                <summary aria-describedby="accordion">
+                    <span role="term">Data Automation Engineer / Data Visualization Programmer - 1 year 6 months</span>
+                </summary>
+            </details>
+            <div class="content">
+                <div class="inner" role="definition" id="accordion">
+                    <p>Analyze, design, estimate, develop, document, unit test, and implement BI dashboards. Perform a variety of programming assignments.</p>
+                    <ul>
+                        <li>Power BI</li>
+                        <li>Python</li>
+                        <li>Excel VBA</li>
+                        <li>Jira</li>
+                        <li>SVN</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion">
+            <details>
+                <summary aria-describedby="accordion">
+                    <span role="term">Process Innovation Engineer - 11 months</span>
+                </summary>
+            </details>
+            <div class="content">
+                <div class="inner" role="definition" id="accordion">
+                    <p>Responsible for the design, development, and deployment of new and/or emerging technologies into the production's processes including but not limited to process automation, process connectivity, artificial intelligence, and machine learning, for the purpose of improving the overall effectiveness and efficiency of the business operations</p>
+                    <ul>
+                        <li>Python</li>
+                        <li>PLC</li>
+                        <li>Bluetooth Low Energy</li>
+                        <li>Internet of Things</li>
+                        <li>FreeCAD</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion">
+            <details>
+                <summary aria-describedby="accordion">
+                    <span role="term">Pilot Development Engineer - 3 years 6 months</span>
+                </summary>
+            </details>
+            <div class="content">
+                <div class="inner" role="definition" id="accordion">
+                    <p>Ensures the successful transition of new products (Quartz Analog and Digital Watch) from development stage to a qualified mass produced product.</p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion">
+            <details>
+                <summary aria-describedby="accordion">
+                    <span role="term">Process Engineer - 1 year 11 months</span>
+                </summary>
+            </details>
+            <div class="content">
+                <div class="inner" role="definition" id="accordion">
+                    <p>Responsible for establishing, documenting, sustaining, maintaining, and improving the process and yield for parts fabrication and watch assembly manufacturing.</p>
+                </div>
+            </div>
+        </div>
+        <!-- end accordion -->
+        </div>
+
+    </div>
+    <div class="container">
+        <!-- carousel -->
+        <ul class="carousel">
+            <li><h3>Slide 1</h3></li>
+            <li><h3>Slide 2</h3></li>
+            <li><h3>Slide 3</h3></li>
+            <li><h3>Slide 4</h3></li>
+        </ul>
+        <!-- end carousel -->
+    </div>
+
+    <div class="container">
+        <!-- two column layout -->
+        <div class="two-col">
+            <div class="card">
+                <h1>Hello world</h1>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="container">
+                        <!-- accordion -->
         <div class="accordion">
             <details>
                 <summary aria-describedby="accordion">
@@ -46,36 +172,6 @@
             </div>
         </div>
         <!-- end accordion -->
-    </div>
-    <div class="container">
-        <!-- carousel -->
-        <ul class="carousel">
-            <li><h3>Slide 1</h3></li>
-            <li><h3>Slide 2</h3></li>
-            <li><h3>Slide 3</h3></li>
-            <li><h3>Slide 4</h3></li>
-        </ul>
-        <!-- end carousel -->
-    </div>
-    <div class="container">
-        <!-- card -->
-        <div class="card">
-            <h1>Hello world</h1>
-            <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <!-- end card -->
-    </div>
-
-    <div class="container">
-        <!-- two column layout -->
-        <div class="two-col">
-            <div class="card">
-                <h1>Hello world</h1>
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="card">
-                <h1>Hello world</h1>
-                <p>Lorem ipsum dolor sit amet.</p>
             </div>
         </div>
         <!-- end two column layout -->

@@ -1,0 +1,6 @@
+[data-theme="dark"] {
+  --color-text: var(--color-neutral-0);
+  --color-background: var(--color-neutral-900);
+
+  --border-color: var(--color-neutral-0);
+}

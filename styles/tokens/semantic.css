@@ -1,0 +1,44 @@
+:root {
+  /* Surface */
+  --color-text: var(--color-neutral-900);
+  --color-background: var(--color-neutral-0);
+
+  /* Brand */
+  --color-primary: var(--color-brand-500);
+  --color-secondary: var(--color-accent-500);
+
+  /* Borders */
+  --border-width: 3px;
+  --border-style: solid;
+  --border-color: var(--color-neutral-900);
+  --border: var(--border-width) var(--border-style) var(--border-color);
+
+  /* Spacing */
+  --space-sm: var(--space-1);
+  --space-md: var(--space-2);
+  --space-lg: var(--space-3);
+
+  /* Shadows */
+  --shadow-sm: var(--shadow-1);
+  --shadow-md: var(--shadow-2);
+  --shadow-lg: var(--shadow-3);
+
+  /* Typography */
+  --font-body: var(--font-sans);
+  --font-heading: var(--font-sans);
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.25rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 2rem;
+  --font-size-2xl: 3rem;
+
+  --line-height-tight: 1.2;
+  --line-height-base: 1.6;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
